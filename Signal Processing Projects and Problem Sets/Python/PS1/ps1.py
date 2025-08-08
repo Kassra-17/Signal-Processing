@@ -125,7 +125,7 @@ labels =[ # adds labels for use in the legend
 ]
 
 
-plt.figure(figsize=(6,6)) # creates a 6x6 inch figure for plotting 
+plt.figure(1,figsize=(6,6)) # creates a 6x6 inch figure for plotting 
 
 
 for zi,label in zip(z_vals, labels):  # zi loops through z_vals, zi is not an index but the actual z_vals values, the label in zip also applies the legend labels 
@@ -136,10 +136,62 @@ plt.axvline(0,color='black',linestyle='--') # defines vertical (y) axis, colors 
 plt.grid(True) # adds a grid to the plot 
 plt.gca().set_aspect('equal') # makes the axes equal in widht/verticality? 
 plt.title('Problem 5 Plots') # adds a title 
-plt.legend()
+plt.legend() # adds a legend to the plot 
 plt.xlabel('Real Axis') # adds x axis title 
 plt.ylabel('Imaginary Axis') # adds y axis title 
 
-
-
 plt.show()
+
+
+def x(t): # defines the parent function x(t) for problem 6 
+    return -1/3*t-1
+
+t=np.linspace(0,3,2) # defines the linear array t that will be used in problem 5 
+
+t_min=np.min(t) # extracts min of t array 
+t_max=np.max(t)  # extracts max of t array
+t_sym=sp.symbols('t_sym',real=True) # defines t as a symbolic variable for domain shift re-evaluations 
+
+# xt_sym=-1/3 * t_sym +1 # defines a symbolic version of x(t)  
+
+lhs=[-t_sym,
+     t_sym+2, 
+     2*t_sym+2,
+     1-3*t_sym] # defines the domain transforms for problem 6a-6d
+
+labels=[ # labels for the legend 
+    "a",
+    "b",
+    "c",
+    "d"
+]
+
+t_input=np.zeros((len(lhs),len(t))) # defines t bound as a 4x2 array of zeros to be populated with the modified domains after the forloop 
+x_transforms=np.zeros((len(lhs),len(t))) # defines x_transforms where we will apply the computed transforms later 
+
+for (i, lhs_i), label in zip(enumerate(lhs),labels):  # sets up the forloop 
+    t_min_transformed=sp.solve(lhs_i-t_min,t_sym)[0]  # 
+    t_max_transformed=sp.solve(lhs_i-t_max,t_sym)[0]  # solves the equation by setting the lhs functions to the origianl bounds for this problem 
+    t_min_transformed=sp.simplify(t_min_transformed) # computes the new bounds for the domain symbolically using sp.simplify 
+    t_max_transformed=sp.simplify(t_max_transformed) 
+    t1=float(t_min_transformed)
+    t2=float(t_max_transformed) # converts the outputs of the transformed domain bounds from symbols to a numerical version 
+    t_start,t_end = sorted([t1,t2]) # sorts the new domains so that we have the lower value first 
+    t_input[i,:]=np.linspace(t_start,t_end,len(t)) # generates array for the adjusted domain for each loop 
+    x_funcs=sp.lambdify(t_sym, sp.simplify(-1/3*lhs_i+1)) # symbolically evaluates x(t) then converts using lambdify into a function that can accept numerical strings 
+    x_transforms[i,:]=x_funcs(t_input[i,:]) # plugs the transformed t into x(t) 
+    plt.plot(t_input[i,:],x_transforms[i,:],label=label) # plots the adjusted domains vs the adjusted signal 
+
+
+plt.legend() # adds a legend 
+plt.axhline(0,color='black',linestyle='--') # defines horizontal (x) axis, colors axis black, uses -- for dashes in axis 
+plt.axvline(0,color='black',linestyle='--') # defines vertical (y) axis, colors axis black, uses -- for dashes in axis 
+plt.grid(True) # adds a grid to the plot 
+plt.gca().set_aspect('equal') # makes the axes equal in widht/verticality? 
+plt.title('Problem 6 Plots (FINALLY)') # adds a title 
+plt.legend() # adds a legend to the plot 
+plt.xlabel('x(t)') # adds x axis title 
+plt.ylabel('t') # adds y axis title 
+plt.show() # generates the plot 
+
+
