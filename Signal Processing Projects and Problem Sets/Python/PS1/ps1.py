@@ -195,3 +195,16 @@ plt.ylabel('t') # adds y axis title
 plt.show() # generates the plot 
 
 
+
+
+t,a=sp.symbols('t a', real=True) # defines t and a symbolically for evaluation in the symbolic integral 
+fa=sp.exp(-2*t) # defines the exponential function 
+
+
+integral_a=sp.integrate(fa,(t,0,a)) # evaluates the integral symbolically from 0 to a 
+print("7b:", integral_a) # prints the result 
+
+fb=sp.exp(-3*t) # defines exp. function for problem b 
+integral_b=sp.integrate(fb, (t, 0, sp.oo)) # evaluates integral from 0 to inf. for b 
+print("7b:" ,integral_b)
+
