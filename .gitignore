@@ -1,0 +1,14 @@
+*.a
+*.lib
+*.exe
+*.out
+
+# Optional common build dirs (keep if you ever use them)
+build/
+dist/
+
+# --- macOS cruft ---
+.DS_Store
+
+# --- Keep VS Code workspace files tracked ---
+!.vscode/
