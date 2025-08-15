@@ -1,0 +1,169 @@
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "clang++ -std=c++20 -I/opt/homebrew/include -L/opt/homebrew/lib \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\"",
+//       "group": { "kind": "build", "isDefault": true },
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "clang++ -std=c++20 -I/opt/homebrew/include -L/opt/homebrew/lib \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\"",
+//       "group": { "kind": "build", "isDefault": true },
+//       "problemMatcher": []
+//     },
+
+//     /* NEW: add a Python task so the same key can run Python files too */
+//     {
+//       "label": "run current python file",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "python3 \"${fileBasename}\"",
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+
+
+{
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+// "command": "VENV_PY=\"/Users/penguin/Desktop/Signal-Processing/.venv/bin/python\"; \
+// clang++ -std=c++20 \
+// -I/opt/homebrew/include \
+// -I\"/Users/penguin/Desktop/Signal-Processing/Signal Processing Projects and Problem Sets/CPP/third_party\" \
+// $($VENV_PY -m sysconfig --includes) \
+// -I$($VENV_PY -c 'import numpy; print(numpy.get_include())') \
+// -L/opt/homebrew/lib \
+// $($VENV_PY -m sysconfig --ldflags) \
+// \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\""      "group": { "kind": "build", "isDefault": true },
+//       "problemMatcher": []
+//     },
+
+//     /* NEW: add a Python task so the same key can run Python files too */
+//     {
+//       "label": "run current python file",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "python3 \"${fileBasename}\"",
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+
+
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "VENV=\"/Users/penguin/Desktop/Signal-Processing/.venv\"; PYC=\"/opt/homebrew/bin/python3-config\"; PYP=\"$VENV/bin/python3\"; clang++ -std=c++20 -I/opt/homebrew/include -I\"/Users/penguin/Desktop/Signal-Processing/Signal Processing Projects and Problem Sets/CPP/third_party\" $($PYC --includes) -I$($PYP -c 'import numpy; print(numpy.get_include())') -L/opt/homebrew/lib $($PYC --ldflags) \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\""      "problemMatcher": []
+//     },
+
+//     /* NEW: add a Python task so the same key can run Python files too */
+//     {
+//       "label": "run current python file",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "python3 \"${fileBasename}\"",
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+
+
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "VENV=\"/Users/penguin/Desktop/Signal-Processing/.venv\"; PYC=\"/opt/homebrew/bin/python3-config\"; PYP=\"$VENV/bin/python3\"; clang++ -std=c++20 -I/opt/homebrew/include -I\"/Users/penguin/Desktop/Signal-Processing/Signal Processing Projects and Problem Sets/CPP/third_party\" $($PYC --includes) -I$($PYP -c 'import numpy; print(numpy.get_include())') -L/opt/homebrew/lib $($PYC --ldflags) \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && \"./${fileBasenameNoExtension}\"",
+//       "problemMatcher": []
+//     },
+
+//     /* NEW: add a Python task so the same key can run Python files too */
+//     {
+//       "label": "run current python file",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "python3 \"${fileBasename}\"",
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+// "command": "VENV=\"/Users/penguin/Desktop/Signal-Processing/.venv\"; PYC=\"/opt/homebrew/bin/python3-config\"; PYP=\"$VENV/bin/python3\"; BASE=$($PYP -c 'import sys; print(sys.base_prefix)'); SP=$($PYP -c 'import site; print(site.getsitepackages()[0])'); clang++ -std=c++20 -Wno-deprecated-declarations -I/opt/homebrew/include -I\"/Users/penguin/Desktop/Signal-Processing/Signal Processing Projects and Problem Sets/CPP/third_party\" $($PYC --includes) -I$($PYP -c 'import numpy; print(numpy.get_include())') -L/opt/homebrew/lib $($PYC --embed --ldflags) -Wl,-w \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && PYTHONHOME=\"$BASE\" PYTHONPATH=\"$SP\" \"./${fileBasenameNoExtension}\""
+//     /* NEW: add a Python task so the same key can run Python files too */
+//     {
+//       "label": "run current python file",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "python3 \"${fileBasename}\"",
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+// {
+//   "version": "2.0.0",
+//   "tasks": [
+//     {
+//       "label": "build and run current cpp (clang++)",
+//       "type": "shell",
+//       "options": { "cwd": "${fileDirname}" },
+//       "command": "VENV=\"/Users/penguin/Desktop/Signal-Processing/.venv\"; PYC=\"/opt/homebrew/bin/python3-config\"; PYP=\"$VENV/bin/python3\"; BASE=$($PYP -c 'import sys; print(sys.base_prefix)'); SP=$($PYP -c 'import site; print(site.getsitepackages()[0])'); clang++ -std=c++20 -I/opt/homebrew/include -I\"/Users/penguin/Desktop/Signal-Processing/Signal Processing Projects and Problem Sets/CPP/third_party\" $($PYC --includes) -I$($PYP -c 'import numpy; print(numpy.get_include())') -L/opt/homebrew/lib $($PYC --embed --ldflags) \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && PYTHONHOME=\"$BASE\" PYTHONPATH=\"$SP\" \"./${fileBasenameNoExtension}\"",
+//       "group": { "kind": "build", "isDefault": true },
+//       "problemMatcher": []
+//     }
+//   ]
+// }
+
+
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build and run current cpp (clang++)",
+      "type": "shell",
+      "options": { "cwd": "${fileDirname}" },
+"command": "VENV=\"/Users/penguin/Desktop/Signal-Processing/.venv\"; PYC=\"/opt/homebrew/bin/python3-config\"; PYP=\"$VENV/bin/python3\"; BASE=$($PYP -c 'import sys; print(sys.base_prefix)'); SP=$($PYP -c 'import site; print(site.getsitepackages()[0])'); clang++ -std=c++20 -Wno-deprecated-declarations -Wno-unused-command-line-argument -I/opt/homebrew/include -I\"/Users/penguin/Desktop/Signal-Processing/Signal Processing Projects and Problem Sets/CPP/third_party\" $($PYC --includes) -I$($PYP -c 'import numpy; print(numpy.get_include())') -L/opt/homebrew/lib $($PYC --embed --ldflags) -Wl,-w \"${fileBasename}\" -lginac -lcln -o \"${fileBasenameNoExtension}\" && PYTHONHOME=\"$BASE\" PYTHONPATH=\"$SP\" \"./${fileBasenameNoExtension}\""      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}
