@@ -134,15 +134,4 @@ int main() { // allows us to start the code
     problem2(); 
     problem3(); 
     problem4();
-
-
-
-    std::vector<double> x {1, 2, 3, 4, 5};
-    std::vector<double> y {1, 4, 9, 16, 25};
-
-    plt::plot(x, y);
-    plt::title("matplotlib-cpp Smoke Test");
-    plt::show();
-
-    return 0;
 }
