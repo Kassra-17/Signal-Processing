@@ -1,24 +1,38 @@
+
 # ---- Python ----
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 .venv/
+venv/
 
-# ---- C/C++ build outputs ----
+# ---- C/C++ build artifacts ----
 *.o
 *.obj
-*.so
-*.dylib
-*.dll
+*.lo
+*.la
 *.a
 *.lib
+*.dll
+*.dylib
+*.so
+*.so.*
 *.exe
 *.out
+*.app
+a.out
+*.dSYM/
+*.pch
+*.gch
 
-# common build dirs
-build/
-dist/
+# Common build dirs
+/build/
+/bin/
+/obj/
+/dist/
+/Debug/
+/Release/
 
 # macOS cruft
 .DS_Store
@@ -27,7 +41,7 @@ dist/
 !.vscode/
 
 # Keep third-party headers tracked
-!Signal Processing Projects and Problem Sets/CPP/third_party/matplotlibcpp.h
+!/Signal Processing Projects and Problem Sets/CPP/third_party/matplotlibcpp.h
 
 # (Optional) ignore your compiled PS1 binary specifically:
 Signal Processing Projects and Problem Sets/CPP/PS1/ps1
