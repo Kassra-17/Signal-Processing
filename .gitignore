@@ -1,14 +1,33 @@
+# ---- Python ----
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+
+# ---- C/C++ build outputs ----
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
 *.a
 *.lib
 *.exe
 *.out
 
-# Optional common build dirs (keep if you ever use them)
+# common build dirs
 build/
 dist/
 
-# --- macOS cruft ---
+# macOS cruft
 .DS_Store
 
-# --- Keep VS Code workspace files tracked ---
+# Keep VS Code project files tracked
 !.vscode/
+
+# Keep third-party headers tracked
+!Signal Processing Projects and Problem Sets/CPP/third_party/matplotlibcpp.h
+
+# (Optional) ignore your compiled PS1 binary specifically:
+Signal Processing Projects and Problem Sets/CPP/PS1/ps1
