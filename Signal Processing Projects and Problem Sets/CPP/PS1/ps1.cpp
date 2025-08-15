@@ -4,7 +4,7 @@
 #include <ginac/ginac.h> // grabs symbolic math library and supporting cast for that 
 #include <numbers> // allows us to use things like pi 
 #include "matplotlibcpp.h"
-namespace plt=matplotplibcpp; // defines namespace plt for matplotlib-cpp 
+namespace plt=matplotlibcpp; // defines namespace plt for matplotlib-cpp 
 using namespace std::numbers; // allows us to recognize pi as a pre-defined function 
 using namespace std::literals::complex_literals; // allows the script to access the cmplex_literals namesspace for easier access to complex i 
 using namespace GiNaC; // enables namespace GiNaC 
@@ -134,4 +134,15 @@ int main() { // allows us to start the code
     problem2(); 
     problem3(); 
     problem4();
+
+
+
+    std::vector<double> x {1, 2, 3, 4, 5};
+    std::vector<double> y {1, 4, 9, 16, 25};
+
+    plt::plot(x, y);
+    plt::title("matplotlib-cpp Smoke Test");
+    plt::show();
+
+    return 0;
 }
