@@ -45,3 +45,4 @@ a.out
 
 # (Optional) ignore your compiled PS1 binary specifically:
 Signal Processing Projects and Problem Sets/CPP/PS1/ps1
+.vscode/settings.json
