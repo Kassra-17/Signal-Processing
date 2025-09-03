@@ -270,6 +270,4 @@ int main() { // allows us to start the code
     problem4();
     problem5(); 
     problem6(); 
-    problem7(); 
-
 }
